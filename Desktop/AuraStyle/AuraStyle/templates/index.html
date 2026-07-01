@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AuraStyle AI Fashion Search</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+
+            AuraStyle
+
+        </div>
+
+        <ul>
+
+            <li><a href="/">Home</a></li>
+
+            <li><a href="/products">Products</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>
+
+            AI Fashion Search
+
+        </h1>
+
+        <p>
+
+            Search your favourite fashion using
+            AI + Image Upload + MongoDB
+
+        </p>
+
+    </section>
+
+    <!-- ================= SEARCH ================= -->
+
+    <section class="search-section">
+
+        <form action="/search"
+              method="POST">
+
+            <input
+
+                type="text"
+
+                name="query"
+
+                placeholder="Search Hoodie, Shoes, Dress..."
+
+                required>
+
+            <button>
+
+                Search
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- ================= IMAGE UPLOAD ================= -->
+
+    <section class="upload-section">
+
+        <h2>
+
+            Upload Fashion Image
+
+        </h2>
+
+        <form
+
+            action="/upload"
+
+            method="POST"
+
+            enctype="multipart/form-data">
+
+            <input
+
+                type="file"
+
+                name="image"
+
+                required>
+
+            <button>
+
+                Upload Image
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <div class="card">
+
+            🤖
+
+            <h3>
+
+                AI Search
+
+            </h3>
+
+            <p>
+
+                Search using product names.
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            📷
+
+            <h3>
+
+                Image Upload
+
+            </h3>
+
+            <p>
+
+                Upload image and find similar fashion.
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            👕
+
+            <h3>
+
+                Fashion Database
+
+            </h3>
+
+            <p>
+
+                Products stored inside MongoDB Atlas.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <a href="/products">
+
+            Browse Products →
+
+        </a>
+
+    </section>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

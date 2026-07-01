@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Image Result | AuraStyle</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+
+        AuraStyle
+
+    </div>
+
+    <ul>
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/products">Products</a></li>
+
+    </ul>
+
+</nav>
+
+<section class="hero" style="min-height:220px;">
+
+<h1>
+
+Image Uploaded Successfully
+
+</h1>
+
+<p>
+
+Your uploaded fashion image.
+
+</p>
+
+</section>
+
+<div class="result">
+
+<img src="{{ url_for('static',
+filename='uploads/' + image) }}">
+
+<br><br>
+
+<a href="/">
+
+<button>
+
+Upload Another Image
+
+</button>
+
+</a>
+
+</div>
+
+<script src="{{ url_for('static',
+filename='js/script.js') }}">
+
+</script>
+
+</body>
+
+</html>

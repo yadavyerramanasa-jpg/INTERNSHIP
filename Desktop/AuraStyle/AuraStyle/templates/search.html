@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Search Results | AuraStyle</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+
+        AuraStyle
+
+    </div>
+
+    <ul>
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/products">Products</a></li>
+
+    </ul>
+
+</nav>
+
+<section class="hero" style="min-height:220px;">
+
+    <h1>
+
+        Search Results
+
+    </h1>
+
+    <p>
+
+        Keyword :
+        <strong>{{ query }}</strong>
+
+    </p>
+
+</section>
+
+<div class="container">
+
+{% if products %}
+
+{% for product in products %}
+
+<div class="product-card">
+
+    <img src="{{ product.image_url }}"
+         alt="{{ product.name }}">
+
+    <div class="product-info">
+
+        <h2>
+
+            {{ product.name }}
+
+        </h2>
+
+        <p>
+
+            Brand :
+            {{ product.brand }}
+
+        </p>
+
+        <p>
+
+            Category :
+            {{ product.category }}
+
+        </p>
+
+        <h3 class="price">
+
+            ₹ {{ product.price }}
+
+        </h3>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<div
+style="
+width:100%;
+text-align:center;
+margin-top:50px;
+">
+
+<h2>
+
+No Products Found
+
+</h2>
+
+<p>
+
+Try another keyword.
+
+</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+<section
+style="
+text-align:center;
+margin:50px;
+">
+
+<a href="/"
+style="
+padding:15px 35px;
+background:#38bdf8;
+border-radius:10px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+">
+
+⬅ Back Home
+
+</a>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
